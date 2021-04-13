@@ -74,3 +74,82 @@ The `-a` option adds all the files you modified since your last commit.It won't 
 
 To compare the working tree with last commit. Use
 `git diff HEAD`
+
+`git log --oneline` gives more concise listing of the log
+
+`git log -nX` where X is integer 
+X = 1 corresponds to last commit
+X = 2 corresponds to previous of last commit
+
+
+`git commit --amend --no-edit`  the --no-edit option tells the Git to make the change without changing the commit message.
+We can use `--amend` option to edit a commit message,to add a files that were accidentally left out of the commit or remove files that were added by mistake.
+
+To recover deleted files `git checkout`
+this command updates files in the working tree to match the version in the index or in the specified tree.
+`git checkout -- <filename>` by default it get file from the index.
+The `--`  in the argument list servers to separate the commit from the list of file paths. 
+
+`checkout` is also used to switch branch.
+
+Recover files: git reset
+`rm index.html`
+`git reset HEAD index.html`
+`git checkout -- index.html`
+
+
+revert a commit
+After you have committed the changes, you need to use a different strategy to undo them. In this case we use `git revert` to revert to our previous commit.It works by making another commit that cancels out the first commit.
+
+
+### Collaborate with Git
+- Clone a repository
+- push changes to a remote repository
+- stash changes
+- pull changes from other users to update a repository
+
+Clone a repository
+`git clone` command is used to clone/copy a repository.
+It accepts SSH path
+    git clone git@example.com:alice/Cats
+
+Remote repositories (git pull)
+When we clone a repository, it creates a reference to the original repo that's called a remote using the name `origin`. It sets up the cloned repo so that the cloned repo will pull from, or retrieve data from, the remote repository. 
+`git pull` command is very efficient because it copies only new commits and objects and then it checks them into your working tree.
+
+Create pull requests (git request-pull)
+We submit a pull request to ask you to pull their changes into the main code base.
+`git request-pull -p origin/main .`
+
+main branch on the origin remote is referred as origin/main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Branching and merging in Git
+- Learn how branches work in Git
+- Create new branches and switch between branches
+- Merge branches together
+- Learn basic techniques for resolving merge conflicts
+
+
